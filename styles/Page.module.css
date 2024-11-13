@@ -1,0 +1,38 @@
+.map {
+    position: absolute;
+    top: 387px;
+    left: 199px;
+    transform:  rotate(180deg);
+    transform-origin: 0 0;
+}
+.mindset1Icon {
+    position: absolute;
+    top: -553px;
+    left: -302px;
+    width: 173px;
+    height: 173px;
+    object-fit: contain;
+    transform:  rotate(-180deg);
+}
+.mind {
+    position: absolute;
+    top: 593px;
+    left: 302px;
+    transform:  rotate(180deg);
+    transform-origin: 0 0;
+}
+.page {
+    width: 100%;
+    position: relative;
+    border-radius: 50px;
+    background: linear-gradient(0deg, #333, #222 50%, rgba(17, 17, 17, 0.07));
+    height: 932px;
+    overflow: hidden;
+    transform:  rotate(180deg);
+    transform-origin: 0 0;
+    text-align: left;
+    font-size: 40px;
+    color: #fff;
+    font-family: Impact;
+}
+
