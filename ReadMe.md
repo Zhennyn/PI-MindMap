@@ -11,3 +11,5 @@ npm install @react-navigation/native-stack
 npm install @react-navigation/stack
 
 npm install --save react-native-vector-icons
+
+npm install expo-sqlite
