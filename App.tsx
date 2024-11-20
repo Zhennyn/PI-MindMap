@@ -1,20 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-export default function App() {
+// Telas
+import Multi from './src/Home/multi';
+import Estudos from './src/Estudos/Home/estudos';
+import Notas from './src/Estudos/Notas/notas';
+import Provas from './src/Estudos/Provas/provas';
+
+
+const Stack = createStackNavigator();
+
+const Navigation: React.FC = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Multi">
+        <Stack.Screen options={{headerShown: false}} name="Multi" component={Multi} />
+        <Stack.Screen name="Estudos" component={Estudos} />
+        <Stack.Screen name="Notas" component={Notas} />
+        <Stack.Screen name="Provas" component={Provas} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default Navigation;

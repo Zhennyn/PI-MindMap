@@ -1,28 +1,31 @@
 {
   "expo": {
-    "name": "PI-reserva",
-    "slug": "PI-reserva",
+    "name": "teste1",
+    "slug": "teste1",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/mindmap.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "./assets/mindmap.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "linear-gradient(to top, #333333 100%, #222222B2 70%, #11111111 6.67%)"
     },
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./assets/mindmap.png",
+        "backgroundColor": "linear-gradient(to top, #333333 100%, #222222B2 70%, #11111111 6.67%)"
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
-    }
+      "favicon": "./assets/mind.png"
+    },
+    "plugins": [
+      "expo-sqlite"
+    ]
   }
 }
