@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     top: 280,
     width: 266,
     height: 100,
-    left: 30,
+    left: 60,
     textAlign: 'center',
     justifyContent: 'center',
     alignItems: 'center',
@@ -82,8 +82,8 @@ const styles = StyleSheet.create({
   },
   iconContainer: {
     position: 'absolute',
-    top: 10, // Posiciona o ícone próximo ao rodapé
-    right: 30, // Alinha o ícone à direita
+    top: 10,
+    right: 50,
   },
 });
 

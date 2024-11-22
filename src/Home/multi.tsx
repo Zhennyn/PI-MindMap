@@ -15,6 +15,10 @@ const MultiScr: React.FC<MultiSrcProps> = ({ navigation }) => {
         navigation.navigate('Estudos');
     };
 
+    const navigateToTarefasTela = () => {
+        navigation.navigate('Tarefas')
+    };
+
     return (
         <LinearGradient
             style={styles.estudos}
@@ -22,7 +26,9 @@ const MultiScr: React.FC<MultiSrcProps> = ({ navigation }) => {
             colors={['#333', 'rgba(34, 34, 34, 0.7)', 'rgba(17, 17, 17, 0.07)']}
         >
             <Text style={[styles.button, styles.buttonText]}>Saúde Fisica</Text>
-            <Text style={[styles.button, styles.buttonText]}>Tarefas</Text>
+            <TouchableOpacity onPress={navigateToTarefasTela} style={styles.button}>
+                <Text style={[styles.buttonText]}>Tarefas</Text>
+            </TouchableOpacity>
             <TouchableOpacity onPress={navigateToEstudosTela} style={styles.button}>
                 <Text style={styles.buttonText}>Estudos</Text> 
             </TouchableOpacity>
@@ -51,10 +57,10 @@ const styles = StyleSheet.create({
         borderRadius: 30,
         backgroundColor: 'black',
         padding: 35,
-        top: 200,
+        top: 250,
         width: 266,
         height: 100,
-        left: 30,
+        left: 60,
         textAlign: 'center',
         justifyContent: 'center',
         alignItems: 'center',

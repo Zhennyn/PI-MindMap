@@ -1,70 +1,65 @@
-import { Color, FontFamily, FontSize } from './styles';
-import React, { useState, useEffect } from 'react';
-import { View, Text, FlatList, StyleSheet, TextInput, Button } from 'react-native';
-import * as SQLite from 'expo-sqlite';
+import React, { useState } from "react";
+import { View, Text, FlatList, StyleSheet, TextInput, Button, TouchableOpacity } from "react-native";
 
-interface Prova {
+type Prova = {
   id: number;
   nome: string;
   pendente: boolean;
-}
+};
 
 const Provas: React.FC = () => {
   const [provas, setProvas] = useState<Prova[]>([]);
-  const [novaProva, setNovaProva] = useState('');
+  const [novaProva, setNovaProva] = useState("");
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const db = SQLite.openDatabase({ name: 'mydatabase.db' });
-      db.transaction((tx) => {
-        tx.executeSql('SELECT * FROM provas', [], (_, { rows }) => {
-          setProvas(rows._array);
-        });
-      });
+  const handleAddProva = () => {
+    if (novaProva.trim() === "") {
+      alert("Digite uma prova!");
+      return;
+    }
+    const nova = {
+      id: provas.length + 1,
+      nome: novaProva,
+      pendente: true,
     };
-
-    fetchData();
-  }, []);
-
-  const handleAddProva = async () => {
-    const db = SQLite.openDatabase({ name: 'mydatabase.db' });
-    db.transaction((tx) => {
-      tx.executeSql('INSERT INTO provas (nome, pendente) VALUES (?, ?)', [novaProva, true], (_, { insertId }) => {
-        setNovaProva('');
-        fetchData();
-      });
-    });
+    setProvas([...provas, nova]);
+    setNovaProva("");
   };
 
-  const handleTogglePendente = async (id: number) => {
-    const db = await SQLite.openDatabase({ name: 'mydatabase.db' });
-    db.transaction((tx) => {
-      tx.executeSql('UPDATE provas SET pendente = NOT pendente WHERE id = ?', [id], () => {
-        fetchData();
-      });
-    });
+  const handleTogglePendente = (id: number) => {
+    setProvas(
+      provas.map((prova) =>
+        prova.id === id ? { ...prova, pendente: !prova.pendente } : prova
+      )
+    );
+  };
+
+  const handleRemoveProva = (id: number) => {
+    setProvas(provas.filter((prova) => prova.id !== id));
   };
 
   const renderItem = ({ item }: { item: Prova }) => (
-    <View style={styles.provasTypo}>
-      <Text style={styles.provas}>{item.nome}</Text>
-      <Button
-        title={item.pendente ? 'Concluída' : 'Pendente'}
-        onPress={() => handleTogglePendente(item.id)}
-        color={item.pendente ? 'green' : 'red'}
-      />
+    <View style={styles.provaItem}>
+      <TouchableOpacity onPress={() => handleTogglePendente(item.id)}>
+        <Text style={[styles.provaText, item.pendente && styles.provaTextPendente]}>
+          {item.nome}
+        </Text>
+      </TouchableOpacity>
+      <Button title="Remover" color="#ff4d4d" onPress={() => handleRemoveProva(item.id)} />
     </View>
   );
 
   return (
     <View style={styles.container}>
-      <TextInput
-        style={styles.input}
-        placeholder="Nova prova"
-        value={novaProva}
-        onChangeText={setNovaProva}
-      />
-      <Button title="Adicionar" onPress={handleAddProva} />
+      <Text style={styles.title}>Lista de Provas</Text>
+      <View style={styles.inputContainer}>
+        <TextInput
+          style={styles.input}
+          placeholder="Nova prova"
+          value={novaProva}
+          onChangeText={setNovaProva}
+        />
+        <Button title="Adicionar" onPress={handleAddProva} />
+      </View>
       <FlatList
         data={provas}
         renderItem={renderItem}
@@ -75,35 +70,52 @@ const Provas: React.FC = () => {
 };
 
 const styles = StyleSheet.create({
-    provasTypo: {
-        textAlign: "center",
-        color: Color.colorWhite,
-        fontFamily: FontFamily.impact,
-        fontSize: FontSize.size_xl,
-        position: "absolute",
-        transform: [
-            {
-                rotate: "180deg"
-            }
-        ]
-    },
-    provas: {
-        flex: 1,
-        width: "100%",
-        height: 932,
-        overflow: "hidden",
-        opacity: 0.90,
-        backgroundColor: '#000000',
-        transform: [
-            {
-                rotate: "180deg"
-            }
-        ]
-    },
+  container: {
+    flex: 1,
+    padding: 20,
+    backgroundColor: "white",
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: "bold",
+    marginBottom: 20,
+    textAlign: "center",
+    color: 'black',
+  },
+  inputContainer: {
+    flexDirection: "row",
+    marginBottom: 20,
+    alignItems: "center",
+  },
+  input: {
+    flex: 1,
+    borderColor: "#ccc",
+    borderWidth: 1,
+    borderRadius: 5,
+    padding: 10,
+    marginRight: 10,
+  },
+  provaItem: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: 10,
+    backgroundColor: "black",
+    borderRadius: 5,
+    marginBottom: 10,
+    shadowColor: "#000",
+    shadowOpacity: 0.1,
+    shadowRadius: 5,
+    elevation: 3,
+  },
+  provaText: {
+    fontSize: 16,
+    color: 'white',
+  },
+  provaTextPendente: {
+    textDecorationLine: "line-through",
+    color: "#aaa",
+  },
 });
 
 export default Provas;
-function fetchData() {
-    throw new Error('Function not implemented.');
-}
-
