@@ -51,7 +51,7 @@ Este aplicativo React Native tem como objetivo auxiliar na organização dos est
     npx expo start
 
 ### **Tela de testes:**
-    Pixel 8a API 35
+   Pixel 8a API 35
 
 
 **Caso haja algum erro de dependências segue abaixo separadamente cada:**
