@@ -5,7 +5,7 @@ Este aplicativo React Native tem como objetivo auxiliar na organização dos est
 ### **Componentes:**
 
 * **Estudos:**
-    * Permite acessar o Google Calendar.
+    * Permite acessar o Google Calendar para agendamento de provas.
     * Navega para as telas de Notas e Provas Pendentes.
 * **MultiScr:**
     * Apresenta uma interface intuitiva com opções de telas em uma grade.
