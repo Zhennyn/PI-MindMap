@@ -39,7 +39,7 @@ Este aplicativo React Native tem como objetivo auxiliar na organização dos est
 
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/Zhennyn/PI-reserva.git
+   git clone https://github.com/Zhennyn/PI-MindMap.git
 
 2. **Instalando dependências:**
     ```bash
