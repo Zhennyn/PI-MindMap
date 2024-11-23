@@ -285,7 +285,7 @@ ALTER TABLE ONLY public.usuarios ALTER COLUMN id_usuario SET DEFAULT nextval('pu
 --
 
 COPY public.atividades_fisicas (id_atividade, id_usuario, tipo_atividade, duracao, calorias_gastas, data_atividade, criado_em, atualizado_em) FROM stdin;
-\.
+
 
 
 --
@@ -295,7 +295,7 @@ COPY public.atividades_fisicas (id_atividade, id_usuario, tipo_atividade, duraca
 --
 
 COPY public.configuracoes_usuario (id_configuracao, id_usuario, notificacoes_ativadas, meta_diaria, criado_em, atualizado_em) FROM stdin;
-\.
+
 
 
 --
@@ -305,7 +305,7 @@ COPY public.configuracoes_usuario (id_configuracao, id_usuario, notificacoes_ati
 --
 
 COPY public.estudos (id_estudo, id_usuario, materia, horas_estudo, data_estudo, criado_em, atualizado_em) FROM stdin;
-\.
+
 
 
 --
@@ -315,7 +315,7 @@ COPY public.estudos (id_estudo, id_usuario, materia, horas_estudo, data_estudo, 
 --
 
 COPY public.tarefas (id_tarefa, id_usuario, titulo, descricao, data_vencimento, concluida, criado_em, atualizado_em) FROM stdin;
-\.
+
 
 
 --
@@ -325,7 +325,7 @@ COPY public.tarefas (id_tarefa, id_usuario, titulo, descricao, data_vencimento, 
 --
 
 COPY public.usuarios (id_usuario, nome, email, senha_hash, criado_em, atualizado_em) FROM stdin;
-\.
+
 
 
 --
