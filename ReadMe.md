@@ -4,12 +4,12 @@ Este aplicativo React Native tem como objetivo auxiliar na organização dos est
 
 ### **Componentes:**
 
-* **Estudos:**
-    * Permite acessar o Google Calendar para agendamento de provas.
-    * Navega para as telas de Notas e Provas Pendentes.
 * **MultiScr:**
     * Apresenta uma interface intuitiva com opções de telas em uma grade.
     * Navega para as telas de Tarefas, Estudos e Saúde Física (ainda não implementada).
+* **Estudos:**
+    * Permite acessar o Google Calendar para agendamento de provas.
+    * Navega para as telas de Notas e Provas Pendentes.
 * **TodoApp:**
     * Permite criar, marcar como concluídas e remover tarefas.
 * **Notas:**
@@ -18,7 +18,8 @@ Este aplicativo React Native tem como objetivo auxiliar na organização dos est
 * **Provas:**
     * Cria uma lista de provas pendentes.
     * Permite marcar provas como concluídas e removê-las.
-
+* **Saúde Física:**
+    * Uma parte do aplicativo responsável por Saúde Física não pode ser fechada corretamente no momento, pois está aguardando uma resposta de outro sistema
 ### **Funcionalidades:**
 
 * **Gerenciamento de tarefas:** Crie, edite e marque como concluídas suas tarefas.

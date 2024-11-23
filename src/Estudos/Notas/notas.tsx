@@ -15,6 +15,7 @@ const Notas: React.FC = () => {
   const [av1, setAv1] = useState<string>('');
   const [av2, setAv2] = useState<string>('');
   const [av3, setAv3] = useState<string>('');
+  const [editId, setEditId] = useState<number | null>(null);
 
   const handleAddNota = () => {
     if (!nome.trim()) {
@@ -31,14 +32,40 @@ const Notas: React.FC = () => {
     };
 
     setNotas([...notas, novaNota]);
-    setNome('');
-    setAv1('');
-    setAv2('');
-    setAv3('');
+    resetForm();
+  };
+
+  const handleEditNota = (nota: Nota) => {
+    setNome(nota.nome);
+    setAv1(nota.av1.toString());
+    setAv2(nota.av2.toString());
+    setAv3(nota.av3.toString());
+    setEditId(nota.id);
+  };
+
+  const handleUpdateNota = () => {
+    if (editId === null) return;
+
+    const notasAtualizadas = notas.map((nota) =>
+      nota.id === editId
+        ? { ...nota, nome, av1: parseFloat(av1) || 0, av2: parseFloat(av2) || 0, av3: parseFloat(av3) || 0 }
+        : nota
+    );
+
+    setNotas(notasAtualizadas);
+    resetForm();
   };
 
   const handleDeleteNota = (id: number) => {
     setNotas(notas.filter((nota) => nota.id !== id));
+  };
+
+  const resetForm = () => {
+    setNome('');
+    setAv1('');
+    setAv2('');
+    setAv3('');
+    setEditId(null);
   };
 
   const renderItem = ({ item }: { item: Nota }) => (
@@ -49,7 +76,10 @@ const Notas: React.FC = () => {
         <Text style={styles.notaText}>AV2: {item.av2}</Text>
         <Text style={styles.notaText}>AV3: {item.av3}</Text>
       </View>
-      <Button title="Delete" onPress={() => handleDeleteNota(item.id)} color="red" />
+      <View style={styles.buttonsContainer}>
+        <Button title="Editar" onPress={() => handleEditNota(item)} color="blue" />
+        <Button title="Excluir" onPress={() => handleDeleteNota(item.id)} color="red" />
+      </View>
     </View>
   );
 
@@ -82,7 +112,11 @@ const Notas: React.FC = () => {
         value={av3}
         onChangeText={setAv3}
       />
-      <Button title="Adicionar Nota" onPress={handleAddNota} />
+      {editId ? (
+        <Button title="Atualizar Nota" onPress={handleUpdateNota} />
+      ) : (
+        <Button title="Adicionar Nota" onPress={handleAddNota} />
+      )}
       <FlatList
         data={notas}
         renderItem={renderItem}
@@ -119,7 +153,11 @@ const styles = StyleSheet.create({
   },
   notaText: {
     fontSize: 16,
-    color:'white',
+    color: 'white',
+  },
+  buttonsContainer: {
+    flexDirection: 'row',
+    gap: 5,
   },
 });
 
