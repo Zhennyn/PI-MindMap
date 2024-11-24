@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, Button, FlatList, TouchableOpacity, StyleSheet } from "react-native";
+import {
+    View,
+    Text,
+    TextInput,
+    Button,
+    FlatList,
+    TouchableOpacity,
+    StyleSheet,
+} from "react-native";
 
 type Todo = {
     id: number;
@@ -10,19 +18,32 @@ type Todo = {
 const TodoApp: React.FC = () => {
     const [todos, setTodos] = useState<Todo[]>([]);
     const [inputValue, setInputValue] = useState<string>("");
+    const [editId, setEditId] = useState<number | null>(null);
 
     const addTodo = () => {
         if (inputValue.trim() === "") {
             alert("Digite uma tarefa!");
             return;
         }
-        const newTodo: Todo = {
-            id: todos.length + 1,
-            text: inputValue,
-            done: false,
-        };
-        setTodos([...todos, newTodo]);
-        setInputValue("");
+
+        if (editId !== null) {
+            // Atualizando uma tarefa existente
+            setTodos(
+                todos.map((todo) =>
+                    todo.id === editId ? { ...todo, text: inputValue } : todo
+                )
+            );
+            resetForm();
+        } else {
+            // Adicionando uma nova tarefa
+            const newTodo: Todo = {
+                id: todos.length + 1,
+                text: inputValue,
+                done: false,
+            };
+            setTodos([...todos, newTodo]);
+            setInputValue("");
+        }
     };
 
     const toggleTodo = (id: number) => {
@@ -37,6 +58,16 @@ const TodoApp: React.FC = () => {
         setTodos(todos.filter((todo) => todo.id !== id));
     };
 
+    const editTodo = (todo: Todo) => {
+        setInputValue(todo.text);
+        setEditId(todo.id);
+    };
+
+    const resetForm = () => {
+        setInputValue("");
+        setEditId(null);
+    };
+
     return (
         <View style={styles.container}>
             <Text style={styles.title}>To-Do List</Text>
@@ -48,7 +79,7 @@ const TodoApp: React.FC = () => {
                     onChangeText={setInputValue}
                     placeholder="Digite uma tarefa"
                 />
-                <Button title="Adicionar" onPress={addTodo} />
+                <Button title={editId ? "Atualizar" : "Adicionar"} onPress={addTodo} />
             </View>
 
             <FlatList
@@ -66,11 +97,18 @@ const TodoApp: React.FC = () => {
                                 {item.text}
                             </Text>
                         </TouchableOpacity>
-                        <Button
-                            title="Remover"
-                            color="#ff4d4d"
-                            onPress={() => removeTodo(item.id)}
-                        />
+                        <View style={styles.buttonGroup}>
+                            <Button
+                                title="Editar"
+                                color="blue"
+                                onPress={() => editTodo(item)}
+                            />
+                            <Button
+                                title="Remover"
+                                color="#ff4d4d"
+                                onPress={() => removeTodo(item.id)}
+                            />
+                        </View>
                     </View>
                 )}
             />
@@ -122,6 +160,10 @@ const styles = StyleSheet.create({
     todoTextDone: {
         textDecorationLine: "line-through",
         color: "#aaa",
+    },
+    buttonGroup: {
+        flexDirection: "row",
+        gap: 10,
     },
 });
 
