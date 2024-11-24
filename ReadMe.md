@@ -1,72 +1,153 @@
-## **MindMap**
+# MindMap: Sistema de Gestão de Rotinas  
 
-Este aplicativo React Native tem como objetivo auxiliar na organização dos estudos, oferecendo funcionalidades para gerenciar tarefas, notas, provas e muito mais.
+## Sobre o Projeto  
 
-### **Componentes:**
+O **MindMap** é um aplicativo mobile desenvolvido para integrar a gestão de tarefas, organização de estudos e monitoramento de atividades físicas em uma única plataforma. Ele visa otimizar a produtividade e promover um estilo de vida equilibrado por meio de ferramentas intuitivas e personalizáveis.  
 
-* **MultiScr:**
-    * Apresenta uma interface intuitiva com opções de telas em uma grade.
-    * Navega para as telas de Tarefas, Estudos e Saúde Física (ainda não implementada).
-* **Estudos:**
-    * Permite acessar o Google Calendar para agendamento de provas.
-    * Navega para as telas de Notas e Provas Pendentes.
-* **TodoApp:**
-    * Permite criar, marcar como concluídas e remover tarefas.
-* **Notas:**
-    * Cadastra notas de provas com nome, AV1, AV2 e AV3.
-    * Permite deletar notas.
-* **Provas:**
-    * Cria uma lista de provas pendentes.
-    * Permite marcar provas como concluídas e removê-las.
-* **Saúde Física:**
-    * Uma parte do aplicativo responsável por Saúde Física não pode ser fechada corretamente no momento, pois está aguardando uma resposta de outro sistema
-### **Funcionalidades:**
+---
 
-* **Gerenciamento de tarefas:** Crie, edite e marque como concluídas suas tarefas.
-* **Gerenciamento de notas:** Cadastre e acompanhe suas notas de provas.
-* **Gerenciamento de provas:** Mantenha uma lista das provas pendentes e concluídas.
-* **Integração com o Google Calendar:** Acesse sua agenda diretamente pelo aplicativo.
-* **Interface intuitiva:** Navegue facilmente entre as diferentes telas.
+## Funcionalidades Principais  
 
-### **Tecnologias:**
+1. **Gestão de Tarefas**  
+   - Priorização e acompanhamento de atividades diárias.  
+   - Ferramentas de calendário e lembretes para controle de prazos e compromissos.  
 
-* **React Native:** Framework para desenvolvimento de aplicativos mobile.
-* **Expo:** Plataforma para desenvolvimento de aplicativos multiplataforma.
-* **TypeScript:** Linguagem de programação principal.
-* **Expo Linear Gradient:** Biblioteca para criar gradientes em componentes.
-* **React Native Vector Icons:** Biblioteca para utilizar ícones.
+2. **Planejamento de Estudos**  
+   - Criação de rotinas personalizadas para estudos.  
+   - Agendamento de provas e atividades acadêmicas.  
 
-### **Instalação:**
+3. **Monitoramento de Exercícios Físicos**  
+   - Planejamento de treinos e integração com dispositivos móveis e smartwatches.  
 
-1. **Clone o repositório:**
-   ```bash
-   git clone https://github.com/Zhennyn/PI-MindMap.git
+4. **Estatísticas e Relatórios**  
+   - Geração de relatórios detalhados para análise de desempenho.  
+   - Sugestões baseadas no comportamento do usuário.  
 
-2. **Instalando dependências:**
-    ```bash
-    cd PI-MindMap
-    npm install
+5. **Interface Intuitiva**  
+   - Navegação simplificada e design pensado para evitar sobrecarga de informações.  
+   - Personalização para atender diferentes perfis de usuários.  
 
-3. **Iniciando projeto:**
-    ```bash
-    npx expo start
+6. **Saúde Física**  
+   - Navega para as telas de Tarefas, Estudos e Saúde Física.  
+   - Permite criar rotinas relacionadas à saúde física.  
+   - Esta funcionalidade está em desenvolvimento, aguardando integração com outro sistema para que funcione corretamente.  
 
-### **Tela de testes:**
-   -Pixel 8a API 35
+---
 
+## Benefícios  
 
-**Caso haja algum erro de dependências segue abaixo separadamente cada:**
+- **Organização e Planejamento:** Gestão eficiente do tempo para equilibrar tarefas, exercícios e estudos.  
+- **Monitoramento e Análise:** Acompanhamento detalhado de progresso e áreas a melhorar.  
+- **Centralização de Dados:** Integração de informações de diferentes áreas em um único local.  
+- **Decisões Informadas:** Relatórios que ajudam a tomar decisões estratégicas.  
 
-    npx expo install expo-linear-gradient
+---
 
-    npm install @react-navigation/native
+## Diferenciais  
 
-    npm install react-native-screens react-native-safe-area-context
+- **Integração Funcional:** Combinação de funcionalidades de gestão em uma única plataforma.  
+- **Flexibilidade e Personalização:** Adapta-se às necessidades de diferentes usuários com sugestões inteligentes.  
+- **Usabilidade Intuitiva:** Interface simples que prioriza a experiência do usuário.  
 
-    npm install @react-navigation/native-stack
+---
 
-    npm install @react-navigation/stack
+## Público-Alvo  
 
-    npm install --save react-native-vector-icons
+O MindMap atende a indivíduos com rotinas diversas, incluindo:  
 
-    npm install expo-sqlite
+- **João (Estudante Universitário):** Busca equilibrar estudos e exercícios físicos.  
+- **Maria (Profissional Multitarefas):** Deseja organizar tarefas pessoais e profissionais.  
+- **Carlos (Empreendedor):** Necessita integrar responsabilidades empresariais e pessoais.  
+- **Ana (Mãe):** Precisa de suporte para organizar suas múltiplas responsabilidades diárias.  
+
+---
+
+## Protótipo  
+
+O protótipo funcional foi desenvolvido na ferramenta [**Figma**](https://www.figma.com/design/VegNE1o3BPpFjOomq1Hd20/Untitled?node-id=0-1&t=2IgYEelFo4xsCpF0-1), com foco na experiência do usuário e na usabilidade.  
+
+---
+
+## Tecnologias Utilizadas  
+
+- **React Native:** Framework para desenvolvimento de aplicativos mobile.  
+- **Expo:** Plataforma para desenvolvimento de aplicativos multiplataforma.  
+- **TypeScript:** Linguagem de programação principal.  
+- **Expo Linear Gradient:** Biblioteca para criar gradientes em componentes.  
+- **React Native Vector Icons:** Biblioteca para utilizar ícones.  
+- **SQLite:** Banco de dados leve para armazenamento local.  
+
+---
+
+## Instalação  
+
+1. Clone o repositório:  
+   ```bash  
+   git clone https://github.com/Zhennyn/PI-MindMap.git  
+   ```  
+
+2. Instale as dependências:  
+   ```bash  
+   cd PI-MindMap  
+   npm install  
+   ```  
+
+3. Inicie o projeto:  
+   ```bash  
+   npx expo start  
+   ```  
+
+### Solução de Problemas de Dependências  
+
+Caso encontre erros relacionados a dependências, execute os comandos abaixo separadamente:  
+
+- **Instale a biblioteca de gradientes:**  
+   ```bash  
+   npx expo install expo-linear-gradient  
+   ```  
+
+- **Adicione a navegação:**  
+   ```bash  
+   npm install @react-navigation/native  
+   ```  
+   ```bash  
+   npm install react-native-screens react-native-safe-area-context  
+   ```  
+   ```bash  
+   npm install @react-navigation/native-stack  
+   ```  
+   ```bash  
+   npm install @react-navigation/stack  
+   ```  
+
+- **Instale os ícones:**  
+   ```bash  
+   npm install --save react-native-vector-icons  
+   ```  
+
+- **Adicione o suporte ao SQLite:**  
+   ```bash  
+   npm install expo-sqlite  
+   ```  
+
+---
+
+## Equipe  
+
+Este projeto foi desenvolvido pelos alunos do curso de **Tecnologia em Análise e Desenvolvimento de Sistemas** do **SENAC** - EAD 2024:  
+- Matheus Lima Menezes  
+- Eduardo Lopes Ferreira Filho  
+- Abraão Joventino Crispiano  
+- Carolina Kazumi Nakamura  
+- André Luiz Fernandes  
+- Lucas José Vicentini  
+
+**Orientador:** Jean Carlo Wagner  
+
+---
+
+## Licença  
+
+Projeto desenvolvido como parte do **Projeto Integrador: Desenvolvimento de Sistemas Orientado a Dispositivos Móveis e Baseados na Web** e destinado a fins acadêmicos.  
+
+**SENAC - 2024**
