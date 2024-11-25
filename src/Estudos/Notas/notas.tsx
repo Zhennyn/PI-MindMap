@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, FlatList } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 
 type Nota = {
   id: number;
@@ -84,7 +85,10 @@ const Notas: React.FC = () => {
   );
 
   return (
-    <View style={styles.container}>
+    <LinearGradient
+      colors={["#1e1e1e", "#2c2c2c", "#3a3a3a"]}
+      style={styles.container}
+    >
       <TextInput
         style={styles.textInput}
         placeholder="Nome da prova"
@@ -122,7 +126,7 @@ const Notas: React.FC = () => {
         renderItem={renderItem}
         keyExtractor={(item) => item.id.toString()}
       />
-    </View>
+    </LinearGradient>
   );
 };
 
@@ -130,7 +134,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
-    backgroundColor: '#f5f5f5',
   },
   textInput: {
     borderWidth: 1,
@@ -138,6 +141,7 @@ const styles = StyleSheet.create({
     padding: 8,
     marginVertical: 5,
     borderRadius: 5,
+    color:'white',
   },
   notaItem: {
     flexDirection: 'row',
