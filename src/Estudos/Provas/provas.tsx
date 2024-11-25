@@ -1,3 +1,4 @@
+import { LinearGradient } from "expo-linear-gradient";
 import React, { useState } from "react";
 import {
   View,
@@ -69,26 +70,31 @@ const Provas: React.FC = () => {
   };
 
   const renderItem = ({ item }: { item: Prova }) => (
-    <View style={styles.provaItem}>
-      <TouchableOpacity onPress={() => handleTogglePendente(item.id)}>
-        <Text
-          style={[
-            styles.provaText,
-            item.pendente && styles.provaTextPendente,
-          ]}
-        >
-          {item.nome}
-        </Text>
-      </TouchableOpacity>
-      <View style={styles.buttonGroup}>
-        <Button title="Editar" color="blue" onPress={() => handleEditProva(item)} />
-        <Button
-          title="Remover"
-          color="#ff4d4d"
-          onPress={() => handleRemoveProva(item.id)}
-        />
+    <LinearGradient
+      colors={["#1e1e1e", "#2c2c2c", "#3a3a3a"]}
+      style={styles.gradient}
+    >
+      <View style={styles.provaItem}>
+        <TouchableOpacity onPress={() => handleTogglePendente(item.id)}>
+          <Text
+            style={[
+              styles.provaText,
+              item.pendente && styles.provaTextPendente,
+            ]}
+          >
+            {item.nome}
+          </Text>
+        </TouchableOpacity>
+        <View style={styles.buttonGroup}>
+          <Button title="Editar" color="blue" onPress={() => handleEditProva(item)} />
+          <Button
+            title="Remover"
+            color="#ff4d4d"
+            onPress={() => handleRemoveProva(item.id)}
+          />
+        </View>
       </View>
-    </View>
+    </LinearGradient>
   );
 
   return (
@@ -116,6 +122,9 @@ const Provas: React.FC = () => {
 };
 
 const styles = StyleSheet.create({
+  gradient: {
+    flex: 1,
+  },
   container: {
     flex: 1,
     padding: 20,

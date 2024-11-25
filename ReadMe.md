@@ -29,8 +29,7 @@ O **MindMap** é um aplicativo mobile desenvolvido para integrar a gestão de ta
 
 6. **Saúde Física**  
    - Navega para as telas de Tarefas, Estudos e Saúde Física.  
-   - Permite criar rotinas relacionadas à saúde física.  
-   - Esta funcionalidade está em desenvolvimento, aguardando integração com outro sistema para que funcione corretamente.  
+   - Permite criar rotinas relacionadas à saúde física.   
 
 ---
 
