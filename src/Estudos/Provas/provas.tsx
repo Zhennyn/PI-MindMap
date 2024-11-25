@@ -28,7 +28,6 @@ const Provas: React.FC = () => {
     }
 
     if (editId !== null) {
-      // Editar prova existente
       setProvas(
         provas.map((prova) =>
           prova.id === editId ? { ...prova, nome: novaProva } : prova
@@ -36,7 +35,6 @@ const Provas: React.FC = () => {
       );
       resetForm();
     } else {
-      // Adicionar nova prova
       const nova = {
         id: provas.length + 1,
         nome: novaProva,
@@ -98,7 +96,10 @@ const Provas: React.FC = () => {
   );
 
   return (
-    <View style={styles.container}>
+    <LinearGradient
+      colors={["#1e1e1e", "#2c2c2c", "#3a3a3a"]}
+      style={styles.container}
+    >
       <Text style={styles.title}>Lista de Provas</Text>
       <View style={styles.inputContainer}>
         <TextInput
@@ -117,7 +118,7 @@ const Provas: React.FC = () => {
         renderItem={renderItem}
         keyExtractor={(item) => item.id.toString()}
       />
-    </View>
+    </LinearGradient>
   );
 };
 
@@ -128,14 +129,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: "white",
   },
   title: {
     fontSize: 24,
     fontWeight: "bold",
     marginBottom: 20,
     textAlign: "center",
-    color: "black",
+    color: "white",
   },
   inputContainer: {
     flexDirection: "row",
@@ -160,7 +160,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     shadowColor: "#000",
     shadowOpacity: 0.1,
-    shadowRadius: 5,
+    shadowRadius: 15,
     elevation: 3,
   },
   provaText: {
