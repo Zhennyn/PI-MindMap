@@ -1,14 +1,26 @@
-import React from 'react';
-import { View, Text, StyleSheet, ScrollView } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';  // Certifique-se de que esta dependência está instalada
+import React, { useState } from 'react';
+import { View, Text, StyleSheet, ScrollView, TextInput, Button } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 
-const exercises: string[] = [
+const initialExercises: string[] = [
   'Alongamento de pernas - 3x30s',
   'Alongamento de braços - 3x30s',
   'Alongamento de tronco - 3x30s',
 ];
 
 const AlongamentoScreen: React.FC = () => {
+  const [exercises, setExercises] = useState<string[]>(initialExercises);
+  const [newExercise, setNewExercise] = useState<string>('');
+
+  const addExercise = () => {
+    if (newExercise.trim() === '') {
+      alert('Por favor, insira o nome do exercício.');
+      return;
+    }
+    setExercises([...exercises, newExercise]);
+    setNewExercise('');
+  };
+
   return (
     <LinearGradient colors={['#1e1e1e', '#2c2c2c']} style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollContent}>
@@ -18,6 +30,16 @@ const AlongamentoScreen: React.FC = () => {
             {`${index + 1}. ${exercise}`}
           </Text>
         ))}
+
+        <View style={styles.form}>
+          <TextInput
+            style={styles.input}
+            placeholder="Novo exercício"
+            value={newExercise}
+            onChangeText={setNewExercise}
+          />
+          <Button title="Adicionar exercício" onPress={addExercise} />
+        </View>
       </ScrollView>
     </LinearGradient>
   );
@@ -47,6 +69,17 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginBottom: 10,
     textAlign: 'center',
+  },
+  form: {
+    marginTop: 20,
+    width: '100%', // Ajusta a largura do formulário
+    paddingHorizontal: 20,
+  },
+  input: {
+    backgroundColor: '#fff',
+    padding: 10,
+    borderRadius: 5,
+    marginBottom: 10,
   },
 });
 

@@ -1,14 +1,33 @@
-import React from 'react';
-import { View, Text, StyleSheet, ScrollView } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, StyleSheet, ScrollView, TextInput, Button } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
-const exercises: string[] = [
-  'Corrida - 20 min',
-  'Pular corda - 10 min',
-  'Burpees - 3x15',
+interface Exercise {
+  name: string;
+  load: string;
+}
+
+const initialExercises: Exercise[] = [
+  { name: 'Corrida - 20 min', load: '0' },
+  { name: 'Pular corda - 10 min', load: '0' },
+  { name: 'Burpees - 3x15', load: '0' },
 ];
 
 const CardioScreen: React.FC = () => {
+  const [exercises, setExercises] = useState<Exercise[]>(initialExercises);
+  const [newExercise, setNewExercise] = useState<string>('');
+  const [newLoad, setNewLoad] = useState<string>('');
+
+  const addExercise = () => {
+    if (newExercise.trim() === '' || newLoad.trim() === '') {
+      alert('Por favor, insira o nome do exercício e a carga.');
+      return;
+    }
+    setExercises([...exercises, { name: newExercise, load: newLoad }]);
+    setNewExercise('');
+    setNewLoad('');
+  };
+
   return (
     <LinearGradient colors={['#1e1e1e', '#2c2c2c']} style={styles.container}>
       <View style={styles.headerContainer}>
@@ -17,9 +36,26 @@ const CardioScreen: React.FC = () => {
       <ScrollView contentContainerStyle={styles.scrollContent}>
         {exercises.map((exercise, index) => (
           <Text key={index} style={styles.text}>
-            {`${index + 1}. ${exercise}`}
+            {`${index + 1}. ${exercise.name} - Carga: ${exercise.load} kg`}
           </Text>
         ))}
+
+        <View style={styles.form}>
+          <TextInput
+            style={styles.input}
+            placeholder="Novo exercício"
+            value={newExercise}
+            onChangeText={setNewExercise}
+          />
+          <TextInput
+            style={styles.input}
+            placeholder="Carga (kg)"
+            value={newLoad}
+            keyboardType="numeric"
+            onChangeText={setNewLoad}
+          />
+          <Button title="Adicionar exercício" onPress={addExercise} />
+        </View>
       </ScrollView>
     </LinearGradient>
   );
@@ -52,6 +88,17 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginBottom: 10,
     textAlign: 'center',
+  },
+  form: {
+    marginTop: 20,
+    width: '100%', // Ajusta a largura do formulário
+    paddingHorizontal: 20,
+  },
+  input: {
+    backgroundColor: '#fff',
+    padding: 10,
+    borderRadius: 5,
+    marginBottom: 10,
   },
 });
 

@@ -14,28 +14,46 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
     <LinearGradient colors={['#1e1e1e', '#2c2c2c', '#3a3a3a']} style={styles.background}>
       <ScrollView contentContainerStyle={styles.container}>
         <SectionTitle title="Início rápido" />
-        <ScrollView horizontal={true} contentContainerStyle={styles.horizontalScroll}>
+        <View style={[styles.buttonContainer, styles.containerSpacing]}>
           <ButtonComponent title="Iniciar Treino" onPress={() => navigation.navigate('TrainingSelection')} />
-        </ScrollView>
+        </View>
 
-        <View style={styles.sectionSpacing}>
+        <View style={[styles.sectionSpacing, styles.containerSpacing]}>
           <SectionTitle title="Rotinas" />
           <ScrollView horizontal={true} contentContainerStyle={styles.horizontalScroll}>
-            <ButtonComponent title="Nova Rotina" onPress={() => navigation.navigate('NewTraining')} />
-            <ButtonComponent title="Minhas Rotinas" onPress={() => navigation.navigate('MinhasRotinas')} />
+            <View style={styles.buttonSpacing}>
+              <ButtonComponent title="Nova Rotina" onPress={() => navigation.navigate('NewTraining')} />
+            </View>
+            <View style={styles.buttonSpacing}>
+              <ButtonComponent title="Explorar" onPress={() => navigation.navigate('MinhasRotinas')} />
+            </View>
           </ScrollView>
         </View>
 
-        <View style={styles.sectionSpacing}>
+        <View style={[styles.sectionSpacing, styles.containerSpacing]}>
           <SectionTitle title="Rotinas Pré-Montadas" />
           <ScrollView horizontal={true} contentContainerStyle={styles.horizontalScroll}>
-            <ButtonComponent title="Costas" onPress={() => navigation.navigate('Costas')} />
-            <ButtonComponent title="Peito" onPress={() => navigation.navigate('Peito')} />
-            <ButtonComponent title="Pernas" onPress={() => navigation.navigate('Pernas')} />
-            <ButtonComponent title="Braços" onPress={() => navigation.navigate('Braços')} />
-            <ButtonComponent title="Abdômen" onPress={() => navigation.navigate('Abdomen')} />
-            <ButtonComponent title="Cardio" onPress={() => navigation.navigate('Cardio')} />
-            <ButtonComponent title="Alongamento" onPress={() => navigation.navigate('Alongamento')} />
+            <View style={styles.buttonSpacing}>
+              <ButtonComponent title="Costas" onPress={() => navigation.navigate('Costas')} />
+            </View>
+            <View style={styles.buttonSpacing}>
+              <ButtonComponent title="Peito" onPress={() => navigation.navigate('Peito')} />
+            </View>
+            <View style={styles.buttonSpacing}>
+              <ButtonComponent title="Pernas" onPress={() => navigation.navigate('Pernas')} />
+            </View>
+            <View style={styles.buttonSpacing}>
+              <ButtonComponent title="Braços" onPress={() => navigation.navigate('Bracos')} />
+            </View>
+            <View style={styles.buttonSpacing}>
+              <ButtonComponent title="Abdômen" onPress={() => navigation.navigate('Abdomen')} />
+            </View>
+            <View style={styles.buttonSpacing}>
+              <ButtonComponent title="Cardio" onPress={() => navigation.navigate('Cardio')} />
+            </View>
+            <View style={styles.buttonSpacing}>
+              <ButtonComponent title="Alongamento" onPress={() => navigation.navigate('Alongamento')} />
+            </View>
           </ScrollView>
         </View>
       </ScrollView>
@@ -50,16 +68,23 @@ const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
     padding: 10,
+    justifyContent: 'flex-start',
+  },
+  buttonContainer: {
+    marginBottom: 20, 
   },
   horizontalScroll: {
     flexDirection: 'row',
     alignItems: 'center',
   },
   sectionSpacing: {
-    marginBottom: 15, 
+    marginBottom: 10, 
+  },
+  containerSpacing: {
+    marginHorizontal: 15,
   },
   buttonSpacing: {
-    marginHorizontal: 15,
+    marginHorizontal: 5,
   },
 });
 

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { LinearGradient } from 'expo-linear-gradient';
 
 type Training = {
   label: string;
@@ -44,25 +45,30 @@ const TrainingSelectionScreen: React.FC<TrainingSelectionScreenProps> = ({ navig
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Selecione o Tipo de Treino</Text>
-      <Picker
-        selectedValue={selectedTraining}
-        style={styles.picker}
-        onValueChange={(itemValue) => setSelectedTraining(itemValue)}
-      >
-        {trainings.map((training) => (
-          <Picker.Item key={training.value} label={training.label} value={training.value} />
-        ))}
-      </Picker>
-      <View style={styles.buttonContainer}>
-        <Button title="Iniciar Treino" onPress={handleStartTraining} />
+    <LinearGradient colors={['#1e1e1e', '#2c2c2c', '#3a3a3a']} style={styles.background}>
+      <View style={styles.container}>
+        <Text style={styles.title}>Selecione o Tipo de Treino</Text>
+        <Picker
+          selectedValue={selectedTraining}
+          style={styles.picker}
+          onValueChange={(itemValue) => setSelectedTraining(itemValue)}
+        >
+          {trainings.map((training) => (
+            <Picker.Item key={training.value} label={training.label} value={training.value} color="#ffffff" />
+          ))}
+        </Picker>
+        <View style={styles.buttonContainer}>
+          <Button title="Iniciar Treino" onPress={handleStartTraining} color="#ffffff" />
+        </View>
       </View>
-    </View>
+    </LinearGradient>
   );
 };
 
 const styles = StyleSheet.create({
+  background: {
+    flex: 1,
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
@@ -73,14 +79,16 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     marginBottom: 20,
+    color: '#FFFFFF', 
   },
   picker: {
     height: 50,
     width: '100%',
     marginBottom: 20,
+    color: '#FFFFFF', 
   },
   buttonContainer: {
-    marginTop: 150, // Aumenta a margem superior para mover o botão mais para baixo
+    marginTop: 150,
   },
 });
 
