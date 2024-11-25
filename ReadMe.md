@@ -74,8 +74,7 @@ O protótipo funcional foi desenvolvido na ferramenta [**Figma**](https://www.fi
 - **Expo:** Plataforma para desenvolvimento de aplicativos multiplataforma.  
 - **TypeScript:** Linguagem de programação principal.  
 - **Expo Linear Gradient:** Biblioteca para criar gradientes em componentes.  
-- **React Native Vector Icons:** Biblioteca para utilizar ícones.  
-- **SQLite:** Banco de dados leve para armazenamento local.  
+- **React Native Vector Icons:** Biblioteca para utilizar ícones.   
 
 ---
 
