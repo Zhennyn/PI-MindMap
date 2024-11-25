@@ -18,6 +18,9 @@ const MultiScr: React.FC<MultiSrcProps> = ({ navigation }) => {
     const navigateToTarefasTela = () => {
         navigation.navigate('Tarefas')
     };
+    const navigateToSaudeTela = () => {
+        navigation.navigate('Home')
+    };
 
     return (
         <LinearGradient
@@ -25,7 +28,10 @@ const MultiScr: React.FC<MultiSrcProps> = ({ navigation }) => {
             locations={[0, 0.5, 1]}
             colors={['#333', 'rgba(34, 34, 34, 0.7)', 'rgba(17, 17, 17, 0.07)']}
         >
-            <Text style={[styles.button, styles.buttonText]}>Saúde Fisica</Text>
+         
+            <TouchableOpacity onPress={navigateToSaudeTela} style={styles.button}>
+                <Text style={[styles.buttonText]}>Saúde Fisica</Text>
+            </TouchableOpacity>
             <TouchableOpacity onPress={navigateToTarefasTela} style={styles.button}>
                 <Text style={[styles.buttonText]}>Tarefas</Text>
             </TouchableOpacity>

@@ -119,15 +119,13 @@ Caso encontre erros relacionados a dependências, execute os comandos abaixo sep
    ```bash  
    npm install @react-navigation/stack  
    ```  
+   ```bash 
+   npx expo install @react-native-picker/picker
+   ```
 
 - **Instale os ícones:**  
    ```bash  
    npm install --save react-native-vector-icons  
-   ```  
-
-- **Adicione o suporte ao SQLite:**  
-   ```bash  
-   npm install expo-sqlite  
    ```  
 
 ---
