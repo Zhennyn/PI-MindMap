@@ -25,8 +25,7 @@ const MultiScr: React.FC<MultiSrcProps> = ({ navigation }) => {
     return (
         <LinearGradient
             style={styles.estudos}
-            locations={[0, 0.5, 1]}
-            colors={['#333', 'rgba(34, 34, 34, 0.7)', 'rgba(17, 17, 17, 0.07)']}
+            colors={['#1e1e1e', '#2c2c2c', '#3a3a3a']}
         >
          
             <TouchableOpacity onPress={navigateToSaudeTela} style={styles.button}>

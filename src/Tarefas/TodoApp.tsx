@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { LinearGradient } from "expo-linear-gradient";
 import {
     View,
     Text,
@@ -69,64 +70,76 @@ const TodoApp: React.FC = () => {
     };
 
     return (
-        <View style={styles.container}>
-            <Text style={styles.title}>To-Do List</Text>
+        <LinearGradient
+            colors={["#1e1e1e", "#2c2c2c", "#3a3a3a"]}
+            style={styles.gradient}
+        >
+            <View style={styles.container}>
+                <Text style={styles.title}>To-Do List</Text>
 
-            <View style={styles.inputContainer}>
-                <TextInput
-                    style={styles.input}
-                    value={inputValue}
-                    onChangeText={setInputValue}
-                    placeholder="Digite uma tarefa"
-                />
-                <Button title={editId ? "Atualizar" : "Adicionar"} onPress={addTodo} />
-            </View>
+                <View style={styles.inputContainer}>
+                    <TextInput
+                        style={styles.input}
+                        value={inputValue}
+                        onChangeText={setInputValue}
+                        placeholder="Digite uma tarefa"
+                        placeholderTextColor="#888"
+                    />
+                    <Button
+                        title={editId ? "Atualizar" : "Adicionar"}
+                        onPress={addTodo}
+                    />
+                </View>
 
-            <FlatList
-                data={todos}
-                keyExtractor={(item) => item.id.toString()}
-                renderItem={({ item }) => (
-                    <View style={styles.todoItem}>
-                        <TouchableOpacity onPress={() => toggleTodo(item.id)}>
-                            <Text
-                                style={[
-                                    styles.todoText,
-                                    item.done && styles.todoTextDone,
-                                ]}
-                            >
-                                {item.text}
-                            </Text>
-                        </TouchableOpacity>
-                        <View style={styles.buttonGroup}>
-                            <Button
-                                title="Editar"
-                                color="blue"
-                                onPress={() => editTodo(item)}
-                            />
-                            <Button
-                                title="Remover"
-                                color="#ff4d4d"
-                                onPress={() => removeTodo(item.id)}
-                            />
+                <FlatList
+                    data={todos}
+                    keyExtractor={(item) => item.id.toString()}
+                    renderItem={({ item }) => (
+                        <View style={styles.todoItem}>
+                            <TouchableOpacity onPress={() => toggleTodo(item.id)}>
+                                <Text
+                                    style={[
+                                        styles.todoText,
+                                        item.done && styles.todoTextDone,
+                                    ]}
+                                >
+                                    {item.text}
+                                </Text>
+                            </TouchableOpacity>
+                            <View style={styles.buttonGroup}>
+                                <Button
+                                    title="Editar"
+                                    color="blue"
+                                    onPress={() => editTodo(item)}
+                                />
+                                <Button
+                                    title="Remover"
+                                    color="#ff4d4d"
+                                    onPress={() => removeTodo(item.id)}
+                                />
+                            </View>
                         </View>
-                    </View>
-                )}
-            />
-        </View>
+                    )}
+                />
+            </View>
+        </LinearGradient>
     );
 };
 
 const styles = StyleSheet.create({
+    gradient: {
+        flex: 1, // Garante que o gradiente preencha toda a tela
+    },
     container: {
         flex: 1,
         padding: 20,
-        backgroundColor: "#f5f5f5",
     },
     title: {
         fontSize: 24,
         fontWeight: "bold",
         marginBottom: 20,
         textAlign: "center",
+        color: "#fff", // Ajusta a cor para contraste com o gradiente
     },
     inputContainer: {
         flexDirection: "row",
@@ -140,6 +153,7 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         padding: 10,
         marginRight: 10,
+        backgroundColor: "#fff",
     },
     todoItem: {
         flexDirection: "row",
