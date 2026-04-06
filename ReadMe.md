@@ -1,149 +1,129 @@
-# MindMap: Sistema de Gestão de Rotinas  
+# 🧠 MindMap — Sistema de Gestão de Rotinas
 
-## Sobre o Projeto  
-
-O **MindMap** é um aplicativo mobile desenvolvido para integrar a gestão de tarefas, organização de estudos e monitoramento de atividades físicas em uma única plataforma. Ele visa otimizar a produtividade e promover um estilo de vida equilibrado por meio de ferramentas intuitivas e personalizáveis.  
+> Aplicativo mobile completo para organizar tarefas, estudos e saúde física em um só lugar.
 
 ---
 
-## Funcionalidades Principais  
-
-1. **Gestão de Tarefas**  
-   - Priorização e acompanhamento de atividades diárias.  
-   - Ferramentas de calendário e lembretes para controle de prazos e compromissos.  
-
-2. **Planejamento de Estudos**  
-   - Criação de rotinas personalizadas para estudos.  
-   - Agendamento de provas e atividades acadêmicas.  
-
-3. **Monitoramento de Exercícios Físicos**  
-   - Planejamento de treinos e integração com dispositivos móveis e smartwatches.  
-
-4. **Estatísticas e Relatórios**  
-   - Geração de relatórios detalhados para análise de desempenho.  
-   - Sugestões baseadas no comportamento do usuário.  
-
-5. **Interface Intuitiva**  
-   - Navegação simplificada e design pensado para evitar sobrecarga de informações.  
-   - Personalização para atender diferentes perfis de usuários.  
-
-6. **Saúde Física**  
-   - Navega para as telas de Tarefas, Estudos e Saúde Física.  
-   - Permite criar rotinas relacionadas à saúde física.   
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Zhennyn/PI-MindMap/main/assets/mindmap.png" alt="MindMap Banner" width="720"/>
+</p>
 
 ---
 
-## Benefícios  
+## ✨ Funcionalidades
 
-- **Organização e Planejamento:** Gestão eficiente do tempo para equilibrar tarefas, exercícios e estudos.  
-- **Monitoramento e Análise:** Acompanhamento detalhado de progresso e áreas a melhorar.  
-- **Centralização de Dados:** Integração de informações de diferentes áreas em um único local.  
-- **Decisões Informadas:** Relatórios que ajudam a tomar decisões estratégicas.  
-
----
-
-## Diferenciais  
-
-- **Integração Funcional:** Combinação de funcionalidades de gestão em uma única plataforma.  
-- **Flexibilidade e Personalização:** Adapta-se às necessidades de diferentes usuários com sugestões inteligentes.  
-- **Usabilidade Intuitiva:** Interface simples que prioriza a experiência do usuário.  
+- ✅ **Gestão de Tarefas** — priorização, calendário e lembretes para controle de prazos
+- 📚 **Planejamento de Estudos** — rotinas personalizadas, agendamento de provas e atividades acadêmicas
+- 🏋️ **Monitoramento de Saúde Física** — criação de treinos por grupo muscular (peito, costas, braços, pernas, abdômen, cardio e alongamento)
+- 💾 **Banco de Dados Local** — persistência de dados com SQLite integrado ao dispositivo
+- 📊 **Relatórios de Desempenho** — acompanhamento de progresso com sugestões baseadas no comportamento do usuário
+- 🎨 **Interface Moderna** — navegação fluida com gradientes, ícones e design responsivo
 
 ---
 
-## Público-Alvo  
+## 🛠️ Tecnologias Utilizadas
 
-O MindMap atende a indivíduos com rotinas diversas, incluindo:  
-
-- **João (Estudante Universitário):** Busca equilibrar estudos e exercícios físicos.  
-- **Maria (Profissional Multitarefas):** Deseja organizar tarefas pessoais e profissionais.  
-- **Carlos (Empreendedor):** Necessita integrar responsabilidades empresariais e pessoais.  
-- **Ana (Mãe):** Precisa de suporte para organizar suas múltiplas responsabilidades diárias.  
-
----
-
-## Protótipo  
-
-O protótipo funcional foi desenvolvido na ferramenta [**Figma**](https://www.figma.com/design/VegNE1o3BPpFjOomq1Hd20/Untitled?node-id=0-1&t=2IgYEelFo4xsCpF0-1), com foco na experiência do usuário e na usabilidade.  
+<p align="left">
+  <img src="https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React Native"/>
+  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"/>
+  <img src="https://img.shields.io/badge/Expo-000020?style=for-the-badge&logo=expo&logoColor=white" alt="Expo"/>
+  <img src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite"/>
+  <img src="https://img.shields.io/badge/React_Navigation-6B3FA0?style=for-the-badge&logo=react&logoColor=white" alt="React Navigation"/>
+  <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="Figma"/>
+</p>
 
 ---
 
-## Tecnologias Utilizadas  
+## 🚀 Como executar localmente
 
-- **React Native:** Framework para desenvolvimento de aplicativos mobile.  
-- **Expo:** Plataforma para desenvolvimento de aplicativos multiplataforma.  
-- **TypeScript:** Linguagem de programação principal.  
-- **Expo Linear Gradient:** Biblioteca para criar gradientes em componentes.  
-- **React Native Vector Icons:** Biblioteca para utilizar ícones.   
+### Pré-requisitos
 
----
+- [Node.js](https://nodejs.org/) instalado (v18 ou superior)
+- [Expo CLI](https://docs.expo.dev/get-started/installation/) instalado
+- Aplicativo **Expo Go** no celular (Android ou iOS) **ou** emulador configurado
 
-## Instalação  
+### Passo a passo
 
-1. Clone o repositório:  
-   ```bash  
-   git clone https://github.com/Zhennyn/PI-MindMap.git  
-   ```  
+```bash
+# 1. Clone o repositório
+git clone https://github.com/Zhennyn/PI-MindMap.git
 
-2. Instale as dependências:  
-   ```bash  
-   cd PI-MindMap  
-   npm install  
-   ```  
+# 2. Entre na pasta do projeto
+cd PI-MindMap
 
-3. Inicie o projeto:  
-   ```bash  
-   npx expo start  
-   ```  
+# 3. Instale as dependências
+npm install
 
-### Solução de Problemas de Dependências  
+# 4. Inicie o projeto
+npx expo start
+```
 
-Caso encontre erros relacionados a dependências, execute os comandos abaixo separadamente:  
+Leia o QR Code com o aplicativo **Expo Go** ou pressione `a` para Android / `i` para iOS no terminal.
 
-- **Instale a biblioteca de gradientes:**  
-   ```bash  
-   npx expo install expo-linear-gradient  
-   ```  
+### ⚠️ Solução de problemas de dependências
 
-- **Adicione a navegação:**  
-   ```bash  
-   npm install @react-navigation/native  
-   ```  
-   ```bash  
-   npm install react-native-screens react-native-safe-area-context  
-   ```  
-   ```bash  
-   npm install @react-navigation/native-stack  
-   ```  
-   ```bash  
-   npm install @react-navigation/stack  
-   ```  
-   ```bash 
-   npx expo install @react-native-picker/picker
-   ```
+Caso encontre erros, reinstale as dependências individualmente:
 
-- **Instale os ícones:**  
-   ```bash  
-   npm install --save react-native-vector-icons  
-   ```  
+```bash
+npx expo install expo-linear-gradient
+npm install @react-navigation/native react-native-screens react-native-safe-area-context
+npm install @react-navigation/native-stack @react-navigation/stack
+npx expo install @react-native-picker/picker
+npm install --save react-native-vector-icons
+```
 
 ---
 
-## Equipe  
+## 📸 Screenshots
 
-Este projeto foi desenvolvido pelos alunos do curso de **Tecnologia em Análise e Desenvolvimento de Sistemas** do **SENAC** - EAD 2024:  
-- Matheus Lima Menezes  
-- Eduardo Lopes Ferreira Filho  
-- Abraão Joventino Crispiano  
-- Carolina Kazumi Nakamura  
-- André Luiz Fernandes  
-- Lucas José Vicentini  
-
-**Orientador:** Jean Carlo Wagner  
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Zhennyn/PI-MindMap/main/assets/mindmap.png" alt="Tela Principal" width="300"/>
+  &nbsp;&nbsp;
+  <img src="https://raw.githubusercontent.com/Zhennyn/PI-MindMap/main/assets/calendario%201.png" alt="Calendário" width="300"/>
+</p>
 
 ---
 
-## Licença  
+## 🌐 Demonstração
 
-Projeto desenvolvido como parte do **Projeto Integrador: Desenvolvimento de Sistemas Orientado a Dispositivos Móveis e Baseados na Web** e destinado a fins acadêmicos.  
+> 🚧 Demo online em breve — o projeto roda localmente via Expo Go.
+>
+> Protótipo de interface disponível no [**Figma**](https://www.figma.com/design/VegNE1o3BPpFjOomq1Hd20/Untitled?node-id=0-1&t=2IgYEelFo4xsCpF0-1).
 
-**SENAC - 2024**
+---
+
+## 📌 Sobre o projeto
+
+O **MindMap** foi desenvolvido em 2024 como **Projeto Integrador** do curso de **Tecnologia em Análise e Desenvolvimento de Sistemas** do **SENAC EAD**, com foco em sistemas orientados a dispositivos móveis.
+
+O projeto demonstra habilidades práticas diretamente aplicáveis ao mercado de TI:
+
+| Habilidade | Aplicação no projeto |
+|---|---|
+| 📱 Desenvolvimento Mobile | Arquitetura full-stack com React Native + TypeScript |
+| 🗄️ Banco de Dados | Modelagem e persistência com SQLite |
+| 🔧 Resolução de Problemas | Debug de dependências e conflitos de versão |
+| 🎯 UX / Usabilidade | Prototipagem no Figma antes da implementação |
+| 👥 Trabalho em Equipe | Desenvolvimento colaborativo com 6 integrantes |
+
+---
+
+### 👨‍💻 Equipe
+
+Este projeto foi desenvolvido em grupo pelos alunos do SENAC EAD 2024:
+
+- Matheus Lima Menezes
+- Eduardo Lopes Ferreira Filho
+- Abraão Joventino Crispiano
+- Carolina Kazumi Nakamura
+- André Luiz Fernandes
+- Lucas José Vicentini
+
+**Orientador:** Jean Carlo Wagner
+
+---
+
+<p align="center">
+  Feito com ❤️ pela equipe MindMap — SENAC EAD 2024<br/>
+  ⭐ Se este projeto te ajudou, deixe uma estrela! Pull requests são bem-vindos.
+</p>
